@@ -1,0 +1,7 @@
+StAX is a pull model API -> Handler Class calls parser API
+Generally used as a file parser
+
+Advantages ->
+Stop parsing at any time
+Generally does anything that SAX does, so any instance in which that is used, this is better
+Major package, still receiving updates
