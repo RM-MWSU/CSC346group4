@@ -20,6 +20,7 @@ Tokens are passed the same way they appear in a document
 These tokens are reported based on their nature
 StAX resolves on an event based system, as it encounters it, it reads it
 
+//Consider dropping, one already in tutorial is better
 General Use ->
 1. Import statements
 

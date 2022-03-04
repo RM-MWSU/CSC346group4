@@ -1,0 +1,21 @@
+StAX is a pull model API -> Handler Class calls parser API
+Works close to PrintStream
+Generally used as a file parser
+
+Advantages ->
+Intuitive to use, works off of events
+Stop parsing at any time
+Generally does anything that SAX does, so any instance in which that is used, this is better
+Major package, still receiving updates
+Supports stream and event based reading
+
+Disadvantages ->
+Since StAX reads the entire document over, depending on size, this can make the reading process slower
+
+General Info ->
+StAX is best used when passing an entire XML document as a variable, makes it easier to handle by streaming
+StAX was designed with binding XML data to Java objects in mind
+StAX can read and write to XML documents, where SAX can only read
+Tokens are passed the same way they appear in a document
+These tokens are reported based on their nature
+StAX resolves on an event based system, as it encounters it, it reads it
