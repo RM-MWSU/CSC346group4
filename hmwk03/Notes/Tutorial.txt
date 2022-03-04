@@ -1,4 +1,5 @@
 StAX is a pull model API -> Handler Class calls parser API
+Works close to PrintStream
 Generally used as a file parser
 
 Advantages ->
@@ -14,6 +15,7 @@ Since StAX reads the entire document over, depending on size, this can make the 
 General Info ->
 StAX is best used when passing an entire XML document as a variable, makes it easier to handle by streaming
 StAX was designed with binding XML data to Java objects in mind
+StAX can read and write to XML documents, where SAX can only read
 Tokens are passed the same way they appear in a document
 These tokens are reported based on their nature
 StAX resolves on an event based system, as it encounters it, it reads it
@@ -30,12 +32,24 @@ import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-#. Create an XML factory and point it to the XML file
+2. Create an XML factory and point it to the XML file
+ XMLInputFactory factory = XMLInputFactory.newFactory();
 
-XMLEventReader eventReader = factory.createXMLEventReader(new FileReader("zz_woz.xml"));
+3. (Optional Depending on complexity) True or False statements to mark a tag as used
+boolean bStateName = false;
+boolean bNickname = false;
+boolean bCapital = false;
+boolean bPopulation = false;
 
-#. Have an XMLEvent variable ready to read the events
+4. Have an XMLEventReader object ready
+XMLEventReader eventReader = factory.createXMLEventReader(new FileReader("states.xml"));
+
+5. Have an XMLEvent variable ready to read the events
 XMLEvent event = eventReader.nextEvent;
+
+6. Use either a switch or if else chain to process your data to where you need it
+
+7. Pulling out an element using Characters
 
 Sources ->
 https://www.geeksforgeeks.org/stax-xml-parser-java/
